@@ -1,7 +1,7 @@
 import React from 'react'
 import { ContainerIntro } from "../styles";
 
-export default function Intro() {
+export default function IntroComponent() {
     return (
         <ContainerIntro>
             <h1>Welcome to the Trivia Challenge!</h1>

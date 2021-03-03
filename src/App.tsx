@@ -1,11 +1,16 @@
 import React from 'react'
-import Intro from './components/Intro';
+import IntroComponent from './components/IntroComponent';
+import QuestionComponent from './components/QuestionComponent';
 import { Container } from "./styles";
 
 export default function App() {
     return (
         <Container>
-            <Intro />
+            <IntroComponent />
+            <QuestionComponent
+                category = "Entertainment: Video Games"
+                question = "Unturned originally started as a Roblox game."
+            />
         </Container>
     )
 }
