@@ -12,7 +12,7 @@ export default function QuestionComponent({category, question, isActive, toggleA
 
                 <h2>{index + 1} of 10</h2>
 
-                <button onClick = {toggleActive}>Change</button>
+                <button onClick = {() => toggleActive("True")}>Change</button>
             </ContainerQuestionChild>
         </ContainerQuestion>
     )

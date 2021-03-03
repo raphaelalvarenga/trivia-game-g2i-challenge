@@ -11,6 +11,7 @@ export default function App() {
 
     const [started, setStarted] = React.useState(false);
     const [questions, setQuestions] = React.useState<Question[]>([]);
+    const [score, setScore] = React.useState(0);
 
     React.useEffect(() => {
         getData();
@@ -40,7 +41,8 @@ export default function App() {
                         question,
                         correct_answer,
                         incorrect_answers,
-                        index === 0
+                        index === 0,
+                        ""
                     );
                 });
 
@@ -53,7 +55,7 @@ export default function App() {
         setStarted(true);
     }
 
-    const answered = (index: number) => {
+    const answered = (index: number, answer: string) => {
         let tempQuestions = questions.map(
             (questionLoop, indexLoop) => {
 
@@ -65,11 +67,15 @@ export default function App() {
                     correct_answer,
                     incorrect_answers,
                 } = questionLoop;
+
+                if (answer === correct_answer && index === indexLoop) {
+                    setScore(score + 1);
+                }
                 
                 return indexLoop > index ?
-                    new Question(category, type, difficulty, question, correct_answer, incorrect_answers, true)
+                    new Question(category, type, difficulty, question, correct_answer, incorrect_answers, true, "")
                     :
-                    new Question(category, type, difficulty, question, correct_answer, incorrect_answers, false);
+                    new Question(category, type, difficulty, question, correct_answer, incorrect_answers, false, answer);
             }
         );
 
@@ -88,7 +94,7 @@ export default function App() {
                             category = {question.category}
                             question = {question.question}
                             isActive = {question.isActive}
-                            toggleActive = {() => answered(index)}
+                            toggleActive = {(answer: string) => answered(index, answer)}
                             index = {index}
                         />
                     )

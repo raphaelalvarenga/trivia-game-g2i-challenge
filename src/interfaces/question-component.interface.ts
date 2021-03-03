@@ -3,5 +3,5 @@ export interface QuestionComponentPropsInterface {
     question: string;
     isActive: boolean;
     index: number;
-    toggleActive: () => void;
+    toggleActive: (answer: string) => void;
 }
