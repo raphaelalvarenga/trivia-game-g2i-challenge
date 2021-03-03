@@ -4,16 +4,16 @@ export const Container = styled.div`
     height: 100vh;
     box-sizing: border-box;
     font-family: Arial, Helvetica, Verdana;
-    `;
-    // overflow: hidden;
+    overflow: hidden;
+`;
 
 export const ContainerIntro = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
-    `;
-    // overflow: hidden;
+    overflow: hidden;
+    transition: 1s;
+`;
     
 export const ContainerQuestion = styled.div`
     overflow: hidden;

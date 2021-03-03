@@ -2,8 +2,7 @@ import React from 'react'
 import { ContainerQuestion, ContainerQuestionChild } from "../styles";
 import { QuestionComponentPropsInterface } from "../interfaces/question-component.interface";
 
-export default function QuestionComponent({category, question, isActive, toggleActive}: QuestionComponentPropsInterface) {
-    console.log(isActive)
+export default function QuestionComponent({category, question, isActive, toggleActive, index}: QuestionComponentPropsInterface) {
     return (
         <ContainerQuestion style = {{height: isActive ? "100vh" : 0}}>
             <ContainerQuestionChild>
@@ -11,7 +10,7 @@ export default function QuestionComponent({category, question, isActive, toggleA
 
                 <h1>{question}</h1>
 
-                <h2>1 of 10</h2>
+                <h2>{index + 1} of 10</h2>
 
                 <button onClick = {toggleActive}>Change</button>
             </ContainerQuestionChild>

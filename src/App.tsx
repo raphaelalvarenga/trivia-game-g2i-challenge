@@ -9,6 +9,7 @@ import { Response } from "./classes/response.class";
 
 export default function App() {
 
+    const [started, setStarted] = React.useState(false);
     const [questions, setQuestions] = React.useState<Question[]>([]);
 
     React.useEffect(() => {
@@ -48,6 +49,10 @@ export default function App() {
             .catch(error => console.log(error));
     }
 
+    const start = () => {
+        setStarted(true);
+    }
+
     const answered = (index: number) => {
         let tempQuestions = questions.map(
             (questionLoop, indexLoop) => {
@@ -73,12 +78,10 @@ export default function App() {
 
     return (
         <Container>
-            <IntroComponent />
+            <IntroComponent started = {started} start = {start} />
             {
                 questions.map((question: Question, index: number) => {
 
-                    // console.log(question)
-                    
                     return (
                         <QuestionComponent
                             key = {index}
@@ -86,6 +89,7 @@ export default function App() {
                             question = {question.question}
                             isActive = {question.isActive}
                             toggleActive = {() => answered(index)}
+                            index = {index}
                         />
                     )
                 })
