@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const answerButtons = css`
+    width: 80%;
+    padding: 10px;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    border-style: none;
+    outline-style: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 8px rgb(20, 20, 20);
+`;
 
 export const Container = styled.div`
     height: 100vh;
@@ -34,7 +46,7 @@ export const BeginButton = styled.button`
         box-shadow: 1px 1px 15px black;
     }
 `;
-    
+
 export const ContainerQuestion = styled.div`
     overflow: hidden;
     transition: 1s;
@@ -42,6 +54,23 @@ export const ContainerQuestion = styled.div`
 
 export const ContainerQuestionChild = styled.div`
     height: 100vh;
+`;
+
+export const ButtonTrue = styled.button`
+    ${answerButtons};
+    background-color: rgb(0, 230, 0);
+    margin-bottom: 20px;
+    &:hover {
+        background-color: rgb(0, 200, 0);
+    }
+`;
+
+export const ButtonFalse = styled.button`
+    ${answerButtons};
+    background-color: rgb(230, 0, 0);
+    &:hover {
+        background-color: rgb(200, 0, 0);
+    }
 `;
 
 export const ContainerScore = styled.div`
