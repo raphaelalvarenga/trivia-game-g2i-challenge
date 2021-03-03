@@ -23,3 +23,7 @@ export const ContainerQuestion = styled.div`
 export const ContainerQuestionChild = styled.div`
     height: 100vh;
 `;
+
+export const ContainerScore = styled.div`
+    
+`;

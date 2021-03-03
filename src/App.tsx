@@ -6,6 +6,7 @@ import axios from 'axios';
 import util from "./util/util";
 import { Question } from "./classes/question.class";
 import { Response } from "./classes/response.class";
+import ScoreComponent from './components/ScoreComponent';
 
 export default function App() {
 
@@ -100,7 +101,8 @@ export default function App() {
                     )
                 })
             }
-            
+
+            <ScoreComponent />            
         </Container>
     )
 }
