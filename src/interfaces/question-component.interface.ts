@@ -1,6 +1,6 @@
 export interface QuestionComponentPropsInterface {
     category: string;
     question: string;
-    active: boolean;
+    isActive: boolean;
     toggleActive: () => void;
 }

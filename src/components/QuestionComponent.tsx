@@ -2,9 +2,9 @@ import React from 'react'
 import { ContainerQuestion, ContainerQuestionChild } from "../styles";
 import { QuestionComponentPropsInterface } from "../interfaces/question-component.interface";
 
-export default function QuestionComponent({category, question, active, toggleActive}: QuestionComponentPropsInterface) {
+export default function QuestionComponent({category, question, isActive, toggleActive}: QuestionComponentPropsInterface) {
     return (
-        <ContainerQuestion style = {{height: active ? "100vh" : 0}}>
+        <ContainerQuestion style = {{height: isActive ? "100vh" : 0}}>
             <ContainerQuestionChild>
                 <h1>{category}</h1>
 
