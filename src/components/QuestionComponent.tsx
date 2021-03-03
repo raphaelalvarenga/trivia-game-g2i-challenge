@@ -3,6 +3,7 @@ import { ContainerQuestion, ContainerQuestionChild } from "../styles";
 import { QuestionComponentPropsInterface } from "../interfaces/question-component.interface";
 
 export default function QuestionComponent({category, question, isActive, toggleActive}: QuestionComponentPropsInterface) {
+    console.log(isActive)
     return (
         <ContainerQuestion style = {{height: isActive ? "100vh" : 0}}>
             <ContainerQuestionChild>
