@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const answerButtons = css`
-    width: 80%;
+    width: 100%;
     padding: 10px;
     color: white;
     font-size: 25px;
@@ -20,6 +20,7 @@ export const Container = styled.div`
     background-image: linear-gradient(to bottom right, #06388A, #8E5CFA);
     color: #F5F0FF;
     text-align: center;
+    padding: 0 20px;
 `;
 
 export const ContainerIntro = styled.div`
@@ -29,6 +30,8 @@ export const ContainerIntro = styled.div`
     overflow: hidden;
     transition: 1s;
 `;
+
+export const ButtonsSection = styled.div``;
 
 export const BeginButton = styled.button`
     font-size: 25px;
@@ -54,7 +57,20 @@ export const ContainerQuestion = styled.div`
 
 export const ContainerQuestionChild = styled.div`
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 `;
+
+export const QuestionsCounter = styled.h3`
+
+`;
+
+export const QuestionCategory = styled.h1`
+    
+`;
+
+export const QuestionDescription = styled.h2``;
 
 export const ButtonTrue = styled.button`
     ${answerButtons};

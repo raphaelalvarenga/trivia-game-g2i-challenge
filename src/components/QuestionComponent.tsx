@@ -1,19 +1,22 @@
 import React from 'react'
-import { ContainerQuestion, ContainerQuestionChild, ButtonTrue, ButtonFalse } from "../styles";
+import { ContainerQuestion, ContainerQuestionChild, ButtonTrue, ButtonFalse, QuestionCategory, QuestionDescription, ButtonsSection, QuestionsCounter } from "../styles";
 import { QuestionComponentPropsInterface } from "../interfaces/question-component.interface";
 
 export default function QuestionComponent({category, question, isActive, toggleActive, index}: QuestionComponentPropsInterface) {
     return (
         <ContainerQuestion style = {{height: isActive ? "100vh" : 0}}>
             <ContainerQuestionChild>
-                <h1>{category}</h1>
+                <QuestionsCounter>{index + 1} of 10</QuestionsCounter>
 
-                <h1>{question}</h1>
+                <QuestionCategory>{category}</QuestionCategory>
 
-                <h2>{index + 1} of 10</h2>
+                <QuestionDescription>{question}</QuestionDescription>
 
-                <ButtonTrue onClick = {() => toggleActive("True")}>True</ButtonTrue>
-                <ButtonFalse onClick = {() => toggleActive("False")}>False</ButtonFalse>
+
+                <ButtonsSection>
+                    <ButtonTrue onClick = {() => toggleActive("True")}>True</ButtonTrue>
+                    <ButtonFalse onClick = {() => toggleActive("False")}>False</ButtonFalse>
+                </ButtonsSection>
             </ContainerQuestionChild>
         </ContainerQuestion>
     )
