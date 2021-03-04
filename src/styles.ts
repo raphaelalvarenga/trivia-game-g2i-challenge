@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const answerButtons = css`
     width: 100%;
-    padding: 10px;
+    height: 50px;
     color: white;
     font-size: 25px;
     border-radius: 10px;
@@ -10,6 +10,10 @@ const answerButtons = css`
     outline-style: none;
     cursor: pointer;
     box-shadow: 1px 1px 8px rgb(20, 20, 20);
+    @media(min-width: 700px) {
+        max-width: 300px;
+        height: 80px;
+    }
 `;
 
 export const Container = styled.div`
@@ -31,7 +35,13 @@ export const ContainerIntro = styled.div`
     transition: 1s;
 `;
 
-export const ButtonsSection = styled.div``;
+export const ButtonsSection = styled.div`
+    padding: 0 5px;
+    @media(min-width: 700px) {
+        display: flex;
+        justify-content: space-around;
+    }
+`;
 
 export const BeginButton = styled.button`
     font-size: 25px;
@@ -53,6 +63,8 @@ export const BeginButton = styled.button`
 export const ContainerQuestion = styled.div`
     overflow: hidden;
     transition: 1s;
+    max-width: 1000px;
+    margin: auto;
 `;
 
 export const ContainerQuestionChild = styled.div`
@@ -60,6 +72,7 @@ export const ContainerQuestionChild = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 100%;
 `;
 
 export const QuestionsCounter = styled.h3`
