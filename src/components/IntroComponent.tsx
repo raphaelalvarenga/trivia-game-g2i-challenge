@@ -1,10 +1,6 @@
 import React from 'react'
+import { IntroComponentPropsInterface } from '../interfaces/intro-component-props.interface';
 import { BeginButton, ContainerIntro } from "../styles";
-
-interface IntroComponentPropsInterface {
-    started: boolean;
-    start: () => void;
-}
 
 export default function IntroComponent({started, start}: IntroComponentPropsInterface) {
     return (

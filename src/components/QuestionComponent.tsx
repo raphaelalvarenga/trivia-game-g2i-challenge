@@ -1,6 +1,6 @@
 import React from 'react'
 import { ContainerQuestion, ContainerQuestionChild, ButtonTrue, ButtonFalse, Title, QuestionDescription, ButtonsSection, QuestionsCounter } from "../styles";
-import { QuestionComponentPropsInterface } from "../interfaces/question-component.interface";
+import { QuestionComponentPropsInterface } from "../interfaces/question-component-props.interface";
 
 export default function QuestionComponent({category, question, isActive, toggleActive, index}: QuestionComponentPropsInterface) {
     return (

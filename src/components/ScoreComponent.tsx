@@ -1,16 +1,9 @@
 import React from 'react'
-import { Question } from '../classes/question.class';
 import { BeginButton, ContainerScore, ScoreContent, ScoreIcon, ScoreQuestionDescription, Title } from "../styles";
 import { MdCancel, MdCheckCircle } from "react-icons/md";
+import { ScoreComponentPropsInterface } from '../interfaces/score-component-props.interface';
 
-interface Props {
-    questions: Question[];
-    score: number;
-    isScoreScreenActive: boolean;
-    reset: () => void;
-}
-
-export default function ScoreComponent(props: Props) {
+export default function ScoreComponent(props: ScoreComponentPropsInterface) {
     const { questions, score, isScoreScreenActive, reset } = props;
     return (
         <ContainerScore style = {{
