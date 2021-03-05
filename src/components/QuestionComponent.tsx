@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerQuestion, ContainerQuestionChild, ButtonTrue, ButtonFalse, QuestionCategory, QuestionDescription, ButtonsSection, QuestionsCounter } from "../styles";
+import { ContainerQuestion, ContainerQuestionChild, ButtonTrue, ButtonFalse, Title, QuestionDescription, ButtonsSection, QuestionsCounter } from "../styles";
 import { QuestionComponentPropsInterface } from "../interfaces/question-component.interface";
 
 export default function QuestionComponent({category, question, isActive, toggleActive, index}: QuestionComponentPropsInterface) {
@@ -8,7 +8,7 @@ export default function QuestionComponent({category, question, isActive, toggleA
             <ContainerQuestionChild>
                 <QuestionsCounter>{index + 1} of 10</QuestionsCounter>
 
-                <QuestionCategory>{category}</QuestionCategory>
+                <Title>{category}</Title>
 
                 <QuestionDescription>{question}</QuestionDescription>
 

@@ -20,7 +20,6 @@ export const Container = styled.div`
     height: 100vh;
     box-sizing: border-box;
     font-family: Arial, Helvetica, Verdana;
-    overflow: hidden;
     background-image: linear-gradient(to bottom right, #06388A, #8E5CFA);
     color: #F5F0FF;
     text-align: center;
@@ -79,7 +78,7 @@ export const QuestionsCounter = styled.h3`
 
 `;
 
-export const QuestionCategory = styled.h1`
+export const Title = styled.h1`
     
 `;
 

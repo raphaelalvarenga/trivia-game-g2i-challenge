@@ -1,6 +1,6 @@
 import React from 'react'
 import { Question } from '../classes/question.class';
-import { ContainerScore } from "../styles";
+import { ContainerScore, Title } from "../styles";
 import { MdCancel, MdCheckCircle } from "react-icons/md";
 
 interface Props {
@@ -12,6 +12,7 @@ export default function ScoreComponent(props: Props) {
     const { questions, score } = props;
     return (
         <ContainerScore>
+            <Title>Correct Answers: {score}!</Title>
             {
                 questions.map(question => {
                     const icon = question.correct_answer === question.userAnswer ? <MdCheckCircle /> : <MdCancel />;

@@ -7,12 +7,14 @@ import util from "./util/util";
 import { Question } from "./classes/question.class";
 import { Response } from "./classes/response.class";
 import ScoreComponent from './components/ScoreComponent';
+import "./global-styles.css";
 
 export default function App() {
 
     const [started, setStarted] = React.useState(false);
     const [questions, setQuestions] = React.useState<Question[]>([]);
     const [score, setScore] = React.useState(0);
+    const [isScoreScreenActive, setIsScoreScreenActive] = React.useState<boolean>(false);
 
     React.useEffect(() => {
         getData();
@@ -72,6 +74,8 @@ export default function App() {
                 if (answer === correct_answer && index === indexLoop) {
                     setScore(score + 1);
                 }
+
+                setIsScoreScreenActive(index === (questions.length - 1));
                 
                 return indexLoop > index ?
                     new Question(category, type, difficulty, question, correct_answer, incorrect_answers, true, "")
@@ -84,7 +88,7 @@ export default function App() {
     }
 
     return (
-        <Container>
+        <Container style = {{overflow: isScoreScreenActive ? "scroll" : "hidden"}}>
             <IntroComponent started = {started} start = {start} />
             {
                 questions.map((question: Question, index: number) => {
