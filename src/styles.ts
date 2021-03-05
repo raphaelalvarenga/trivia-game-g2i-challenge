@@ -102,5 +102,31 @@ export const ButtonFalse = styled.button`
 `;
 
 export const ContainerScore = styled.div`
+    max-width: 1000px;
+    margin: auto;
+`;
 
+export const ScoreContent = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+`;
+
+export const ScoreIcon = styled.div`
+    font-size: 30px;
+    margin-right: 20px;
+
+    @media(min-width: 900px) {
+        font-size: 50px;
+    }
+`;
+
+export const ScoreQuestionDescription = styled.div`
+    font-size: 16px;
+    text-align: left;
+    margin-top: -10px;
+
+    @media(min-width: 900px) {
+        font-size: 25px;
+    }
 `;

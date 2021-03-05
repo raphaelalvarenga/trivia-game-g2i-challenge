@@ -1,6 +1,6 @@
 import React from 'react'
 import { Question } from '../classes/question.class';
-import { ContainerScore, Title } from "../styles";
+import { ContainerScore, ScoreContent, ScoreIcon, ScoreQuestionDescription, Title } from "../styles";
 import { MdCancel, MdCheckCircle } from "react-icons/md";
 
 interface Props {
@@ -15,28 +15,19 @@ export default function ScoreComponent(props: Props) {
             <Title>Correct Answers: {score}!</Title>
             {
                 questions.map(question => {
-                    const icon = question.correct_answer === question.userAnswer ? <MdCheckCircle /> : <MdCancel />;
-                    return (
-                        <div
-                            key = {question.question}
-                            style = {{ display: "flex", alignItems: "center", marginBottom: "20px" }}
-                        >
-                            <div style = {{
-                                fontSize: "50px",
-                                marginRight: "20px",
-                                color: question.correct_answer === question.userAnswer ? "rgb(0, 230, 0)" : "rgb(230, 0, 0)"
-                            }}>
-                                {icon}
-                            </div>
+                    const icon = question.correct_answer === question.userAnswer ? {
+                        type: <MdCheckCircle />,
+                        color: "rgb(0, 230, 0)"
+                    } : {
+                        type: <MdCancel />,
+                        color: "rgb(230, 0, 0)"
+                    }
 
-                            <div style = {{
-                                fontSize: "30px",
-                                textAlign: "left",
-                                marginTop: "-10px"
-                            }}>
-                                {question.question}
-                            </div>
-                        </div>
+                    return (
+                        <ScoreContent key = {question.question}>
+                            <ScoreIcon style = {{color: icon.color}}>{icon.type}</ScoreIcon>
+                            <ScoreQuestionDescription>{question.question}</ScoreQuestionDescription>
+                        </ScoreContent>
                     )
                 })
             }
