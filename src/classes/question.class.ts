@@ -8,7 +8,7 @@ export class Question extends Result {
         super(category, type, difficulty, question, correct_answer, incorrect_answer);
 
         this._isActive = isActive;
-        this._userAnswer = "";
+        this._userAnswer = userAnswer;
     }
 
     toggleActive() {

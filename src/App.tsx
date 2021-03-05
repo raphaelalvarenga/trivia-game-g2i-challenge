@@ -102,7 +102,7 @@ export default function App() {
                 })
             }
 
-            <ScoreComponent />            
+            <ScoreComponent questions = {questions} score = {score} />            
         </Container>
     )
 }
