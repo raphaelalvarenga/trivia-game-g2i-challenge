@@ -8,6 +8,7 @@ import { Question } from "./classes/question.class";
 import { Response } from "./classes/response.class";
 import ScoreComponent from './components/ScoreComponent';
 import "./global-styles.css";
+import { decode } from "html-entities";
 
 export default function App() {
 
@@ -27,6 +28,8 @@ export default function App() {
                 const response = result.data as Response;
 
                 const questions: Question[] = response.results.map((result, index) => {
+
+                    result.question = decode(result.question);
 
                     const {
                         category,
