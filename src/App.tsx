@@ -90,6 +90,12 @@ export default function App() {
         setQuestions(tempQuestions)
     }
 
+    const reset = () => {
+        setScore(0);
+        setIsScoreScreenActive(false);
+        getData();
+    }
+
     return (
         <Container style = {{overflow: isScoreScreenActive ? "scroll" : "hidden"}}>
             <IntroComponent started = {started} start = {start} />
@@ -109,7 +115,12 @@ export default function App() {
                 })
             }
 
-            <ScoreComponent questions = {questions} score = {score} />            
+            <ScoreComponent
+                questions = {questions}
+                score = {score}
+                isScoreScreenActive = {isScoreScreenActive}
+                reset = {reset}
+            />
         </Container>
     )
 }

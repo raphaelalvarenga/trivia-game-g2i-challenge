@@ -1,17 +1,22 @@
 import React from 'react'
 import { Question } from '../classes/question.class';
-import { ContainerScore, ScoreContent, ScoreIcon, ScoreQuestionDescription, Title } from "../styles";
+import { BeginButton, ContainerScore, ScoreContent, ScoreIcon, ScoreQuestionDescription, Title } from "../styles";
 import { MdCancel, MdCheckCircle } from "react-icons/md";
 
 interface Props {
     questions: Question[];
     score: number;
+    isScoreScreenActive: boolean;
+    reset: () => void;
 }
 
 export default function ScoreComponent(props: Props) {
-    const { questions, score } = props;
+    const { questions, score, isScoreScreenActive, reset } = props;
     return (
-        <ContainerScore>
+        <ContainerScore style = {{
+            height: isScoreScreenActive ? "auto" : 0,
+            overflow: isScoreScreenActive ? "visible" : "hidden"
+        }}>
             <Title>Correct Answers: {score}!</Title>
             {
                 questions.map(question => {
@@ -31,6 +36,8 @@ export default function ScoreComponent(props: Props) {
                     )
                 })
             }
+
+            <BeginButton onClick = {reset}>Play Again</BeginButton>
         </ContainerScore>
     )
 }

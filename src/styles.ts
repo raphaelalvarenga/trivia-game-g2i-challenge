@@ -104,6 +104,7 @@ export const ButtonFalse = styled.button`
 export const ContainerScore = styled.div`
     max-width: 1000px;
     margin: auto;
+    padding-bottom: 5px;
 `;
 
 export const ScoreContent = styled.div`
