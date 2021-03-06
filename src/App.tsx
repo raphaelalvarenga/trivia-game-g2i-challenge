@@ -72,6 +72,7 @@ export default function App() {
                     question,
                     correct_answer,
                     incorrect_answers,
+                    userAnswer
                 } = questionLoop;
 
                 if (answer === correct_answer && index === indexLoop) {
@@ -80,10 +81,16 @@ export default function App() {
 
                 setIsScoreScreenActive(index === (questions.length - 1));
                 
-                return indexLoop > index ?
-                    new Question(category, type, difficulty, question, correct_answer, incorrect_answers, true, "")
-                    :
-                    new Question(category, type, difficulty, question, correct_answer, incorrect_answers, false, answer);
+                return new Question(
+                    category,
+                    type,
+                    difficulty,
+                    question,
+                    correct_answer,
+                    incorrect_answers,
+                    indexLoop > index,
+                    indexLoop === index ? answer : userAnswer
+                );
             }
         );
 
