@@ -28,7 +28,7 @@ export const ContainerIntro = styled.div`
     flex-direction: column;
     justify-content: space-around;
     overflow: hidden;
-    transition: 1s;
+    transition: 0.3s;
 `;
 
 export const ButtonsSection = styled.div`
