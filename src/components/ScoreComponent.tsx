@@ -4,7 +4,10 @@ import { MdCancel, MdCheckCircle } from "react-icons/md";
 import { ScoreComponentPropsInterface } from '../interfaces/score-component-props.interface';
 
 export default function ScoreComponent(props: ScoreComponentPropsInterface) {
+
+    // Getting parent's props
     const { questions, score, isScoreScreenActive, reset } = props;
+
     return (
         <ContainerScore style = {{
             height: isScoreScreenActive ? "auto" : 0,
